@@ -7,7 +7,15 @@
 
 // Exercise 1: API call error handling
 // Type: async function fetchData(url) {
-
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Error fetching data:', error);
+  }
+}
 
 // Exercise 2: File operation error handling
 // Type: async function readFile(path) {

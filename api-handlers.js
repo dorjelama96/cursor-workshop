@@ -6,7 +6,14 @@
 // TODO: Type handler signatures and let Tab suggest complete implementations
 
 // Exercise 1: Type "async function handleGetRequest(req, res) {" and let Tab suggest
-
+async function handleGetRequest(req, res) {
+    try {
+        const data = await getData();
+        res.json(data);
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+}
 
 // Exercise 2: Type "async function handlePostRequest(req, res) {" and let Tab suggest
 

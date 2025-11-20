@@ -7,11 +7,26 @@
 
 // Exercise 1: Document this function
 // Type /** and press Enter above the function
+/**
+ * 
+ * @param {*} weight 
+ * @param {*} distance 
+ * @param {*} priority 
+ * @returns 
+ */
 function calculateShipping(weight, distance, priority) {
   return weight * distance * (priority ? 1.5 : 1.0);
 }
 
 // Exercise 2: Document this function
+/**
+ * 
+ * @param {*} orderId 
+ * @param {*} customerId 
+ * @param {*} items 
+ * @param {*} paymentMethod 
+ * @returns 
+ */
 function processOrder(orderId, customerId, items, paymentMethod) {
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
   return {
@@ -25,17 +40,23 @@ function processOrder(orderId, customerId, items, paymentMethod) {
 }
 
 // Exercise 3: Document this async function
+/**
+ * @param {*} userId 
+ * @param {*} includeOrders 
+ * @param {*} includePreferences 
+ * @returns 
+ */
 async function fetchUserProfile(userId, includeOrders = false, includePreferences = true) {
   const user = await database.users.findById(userId);
-  
+
   if (includeOrders) {
     user.orders = await database.orders.findByUser(userId);
   }
-  
+
   if (includePreferences) {
     user.preferences = await database.preferences.findByUser(userId);
   }
-  
+
   return user;
 }
 
@@ -57,6 +78,13 @@ class UserService {
 }
 
 // Exercise 5: Document this utility function
+/**
+ * 
+ * @param {*} amount 
+ * @param {*} currency 
+ * @param {*} locale 
+ * @returns 
+ */
 function formatCurrency(amount, currency = 'USD', locale = 'en-US') {
   return new Intl.NumberFormat(locale, {
     style: 'currency',

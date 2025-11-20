@@ -65,3 +65,22 @@ function validatePhone(phone) {
 
 // Now type "test('validates" and let Tab suggest similar test cases
 
+test('validates email format', () => {
+  expect(validateEmail('test@example.com')).toBeTrue();
+});
+
+test('validates name format', () => {
+  expect(validateName('John')).toBeTrue();
+});
+
+test('validates password format', () => {
+  expect(validatePassword('password')).toBeTrue();
+});
+
+test('validates age format', () => {
+  expect(validateAge(25)).toBeTrue();
+});
+
+test('validates phone format', () => {
+  expect(validatePhone('1234567890')).toBeTrue();
+});

@@ -2,6 +2,7 @@
  * React Component Practice
  * Let Tab suggest component implementations and imports
  */
+import{useState} from 'react';
 
 // TODO: Use React hooks, then let Tab suggest the import at the top
 // Example: Use useState below, then go to top and type "import {" to let Tab suggest
