@@ -5,11 +5,19 @@
  */
 
 /**
- * Bug 1: Type coercion issue
+ * Bug 1: Type coercion issue - FIXED
  * Adds two numbers together
  */
 function addNumbers(a, b) {
-    return a + b; // What happens if a or b is a string?
+    // Validate that both arguments are numbers
+    if (typeof a !== 'number' || typeof b !== 'number') {
+        throw new TypeError('Both arguments must be numbers');
+    }
+    // Check for NaN and Infinity
+    if (!Number.isFinite(a) || !Number.isFinite(b)) {
+        throw new TypeError('Both arguments must be finite numbers');
+    }
+    return a + b;
 }
 
 /**
